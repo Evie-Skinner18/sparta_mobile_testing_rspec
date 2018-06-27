@@ -1,4 +1,4 @@
-require 'appium-lib'
+require 'appium_lib'
 require 'pry'
 
 RSpec.configure do |config|
@@ -6,10 +6,12 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
-def caps
+def opts
   {
-    :platformName => 'Android',
-    :deviceName => 'emulator5554',
-    :app => '../app/budgetwatch.apk'
+    caps: {
+      platformName: 'Android',
+      deviceName: 'emulator5554',
+      app: '../native/app/budgetwatch.apk'
+    }
   }
 end
