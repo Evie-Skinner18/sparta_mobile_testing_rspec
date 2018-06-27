@@ -25,14 +25,16 @@ describe "Testing the user's journey from adding a budget on the Budget Watch mo
     find_element(:id, 'protect.budgetwatch:id/menu').click
     find_element(:id, 'protect.budgetwatch:id/action_add').click
     find_element(:id, 'protect.budgetwatch:id/budgetNameEdit').send_keys('Cheese Budget')
+    find_element(:id, 'protect.budgetwatch:id/valueEdit').send_keys('50')
   end
 
   it "should allow the user to save that budget" do
-    pending
+    find_element(:id, 'protect.budgetwatch:id/action_save').click
   end
 
   it "should allow the user to view their budget on the homepage" do
-    pending
+    new_budget = find_element(:xpath, 'hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout[2]/android.widget.RelativeLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView').text
+    expect(new_budget).to eq('Cheese Budget')
   end
 
   #write a test for adding a budget. Entering budget, saving it, and seeing it on
