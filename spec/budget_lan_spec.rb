@@ -15,6 +15,7 @@ describe "Testing the user's journey from adding a budget on the Budget Watch mo
     @driver.driver_quit
   end
 
+  #Open app, add a budget, save budget, view budget.
 
   it "should open the budget watch app" do
     #find the element with this ID and it's the first one in the array
@@ -37,10 +38,7 @@ describe "Testing the user's journey from adding a budget on the Budget Watch mo
     expect(new_budget).to eq('Cheese Budget')
   end
 
-  #write a test for adding a budget. Entering budget, saving it, and seeing it on
-  # thr app's homepage
 
-  #Open app, add a budget, save budget, view budget.
 
 
 
