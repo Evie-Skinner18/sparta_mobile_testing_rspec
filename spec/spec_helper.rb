@@ -1,4 +1,4 @@
-require 'appium-lib'
+require 'appium_lib'
 require 'pry'
 
 RSpec.configure do |config|
@@ -6,10 +6,15 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
-def caps
+#options must be in right format. It will sometimes break!
+#IT was originaly failing because it had no driver
+# sice we didn't config the driver properly
+def opts
   {
-    :platformName => 'Android',
-    :deviceName => 'emulator5554',
-    :app => '../app/budgetwatch.apk'
+    caps: {
+      platformName: 'Android',
+      deviceName: 'emulator5554',
+      app: '../native/app/budgetwatch.apk'
+    }
   }
 end
