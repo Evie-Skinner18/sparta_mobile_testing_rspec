@@ -6,6 +6,9 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
+#options must be in right format. It will sometimes break!
+#IT was originaly failing because it had no driver
+# sice we didn't config the driver properly
 def opts
   {
     caps: {

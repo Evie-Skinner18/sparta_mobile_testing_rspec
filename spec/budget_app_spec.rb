@@ -11,9 +11,9 @@ describe 'Testing the Budget Watch mobile app' do
 
   #must tell the virtual machine to stop after the tests otherwise you'll use up all
   # the CPU!!!
-  # after(:all) do
-  #   @driver.driver_quit
-  # end
+  after(:all) do
+    @driver.driver_quit
+  end
 
 
   it "should open the budget watch app" do
